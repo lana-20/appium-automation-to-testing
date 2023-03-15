@@ -2,9 +2,23 @@
 
 *Learn what it means to start testing rather than just automating.*
 
+Automation vs Testing |
+---- |
+Automation != Testing |
+Automation is in the service of testing, not vice versa. And it's possible to use automation towards unhelpful goals |
+We need to think of our job as testers first and automators second, even if much of our time is spent writing automation |
+
 Automation is not the same as testing, and the purpose of learning all this automation is to enable oneself to become a better software tester! So let's talk about how we move from automation to testing, both philosophically and practically.
 
 Even though today software testing often involves automation, and automation is often implemented for the purpose of testing software, the two concepts are actually logically unrelated. Still, it can be hard not to conflate them. And the danger in conflating them is real, because it can lead us to focus on automation and forget that the real name of the game here is testing. At the end of the day, automation is a means to this end, as fun and satisfying as it may be in its own right. Just because we have figured out how to automate every last corner of our app does not necessarily imply that we've written a single good test. As we talked about early on in the course, testing is the process of building the right kind of crucible for our app. We can put automation to use in any way we want, even towards the wrong goals, the wrong kinds of crucibles for our app. So it's always important to remember that we need to think about our app as testers first, and automators second, even if 80-90% of our time still ends up being spent writing automation code.
+
+Thinking Like a Tester |
+---- |
+Know your app inside and out from a user perspective. Be a power user of your own app. |
+Know your users' desires, intentions, and frustrations. You are a gatekeeper of app quality from a product design perspective--not just a bug finder. |
+Empathize with users to find edge cases product designers might have missed thinking about. But know which edge cases are ones to care about and which aren't. |
+Ensure total clarity of test requirements (requirements will often be given to you vaguely, and it's up to you to clarify) |
+Remember that you are not a robot. Your job is to make robots do useful things, not to become a robot yourself. |
 
 So, how do you think like a tester first, to ensure that your automation is put to good use? Here are a number of pointers I'd encourage you to keep in mind:
 
@@ -15,7 +29,13 @@ So, how do you think like a tester first, to ensure that your automation is put 
 
 Testing is really an art as well as a set of practices, and there are many more pointers to be learned along the way. But the main thing to remember is that you are not a robot, however much you are trying to program a software robot to test your app. And it's your responsibility to use your brain and think critically along multiple dimensions when it comes to testing your app. That is how you will provide value as a tester, not as a human cog in the big machine whose job is to simply turn requirements into automation. That latter role will almost certainly become the domain of robots themselves before too long. But the things we mentioned above (product knowledge, user empathy, imaginative exploration, and breaking down vague requirements into clearly-defined testcases) are not themselves going to be automated away anytime soon!
 
-We just touched on some good conceptual advice for thinking like a tester. But when it comes to our test code, there's also a lot of practical advice it's worth paying attention to. We're going to explore this in a hands-on fashion over the next few units, but let's talk about it at a high level first.
+We just touched on some good conceptual advice for thinking like a tester. But when it comes to our test code, there's also a lot of practical advice it's worth paying attention to. But let's talk about it at a high level first.
+
+Acting Like a Tester |
+---- |
+Use a solid test runner and framework. Don't reinvent the wheel (unless it's to learn how wheels work). Pytest is a great option for Python. Get to know your other testing tools and frameworks inside out, not just the Selenium and Appium commands. |
+Get to know the entire software development cycle. Testing is just one part. You need to know where it fits in the overall picture. Learn about your team's CI server. Become a skilled "DevOps" who can set up testing systems from scratch as part of a CI pipeline. |
+Use good software design patterns. Keep learning and improving your software skills. The best pattern is often situation-dependent, so get yourself in a lot of different situations. Develop software "wisdom" (not just skill) through time and practice. |
 
 1. First, it always makes sense to use a good test runner and framework for your language. There are a number of technical concepts and features that are universal to all kinds of testing, that it doesn't make sense for you to implement on your own. For example, the concept of a test pass or a test failure is something that is very important to have in your test framework. So far in all of our hands-on examples in this course, we've just been writing automation scripts as Python files, where the automation is executed directly by calling Python from the command line. But how do we know if a given test has passed or failed? We have to inspect the command line output, and check for any exceptions raised or output that doesn't look right. This is not a good way to scale up our testsuite. Instead, we want to be able to run any number of tests, and get a report of which passed and which failed. This kind of thing is a feature which will be included in any decent test framework. There are lots of options for runners and frameworks, but in this course we are using Pytest, which is a great option for Python. Thus it's important for you to learn not just the ins and outs of the Appium and Selenium Python APIs--you'll also need to familiarize yourself with the APIs and usage patterns for whichever test framework you opt to use.
 
